@@ -1,0 +1,14 @@
+{
+  "perl"        : "v6.c",
+  "name"        : "OpenGL",
+  "version"     : "*",
+  "description" : "Binding to OpenGL libraries, for creating 3D graphics.",
+  "authors"     : [
+    "Bart Schuller"
+  ],
+  "depends"     : [ ],
+  "provides"    : {
+    "OpenGL"          : "lib/OpenGL.pm6"
+  },
+  "source-url"  : "git://github.com/bartschuller/OpenGL.git"
+}
