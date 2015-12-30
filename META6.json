@@ -8,7 +8,8 @@
   ],
   "depends"     : [ ],
   "provides"    : {
-    "OpenGL"          : "lib/OpenGL.pm6"
+    "GLFW"         : "lib/GLFW.pm6"
+    "GL"           : "lib/GL.pm6"
   },
-  "source-url"  : "git://github.com/bartschuller/OpenGL.git"
+  "source-url"  : "git://github.com/bartschuller/perl6-OpenGL.git"
 }

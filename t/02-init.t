@@ -1,7 +1,9 @@
 use Test;
 use GLFW;
 
-plan 4;
+plan 5;
+
+is(+GLFW_KEY_SPACE, 32);
 
 is(glfwInit(), 1);
 
