@@ -2,7 +2,11 @@ unit module GL;
 
 use NativeCall;
 
-constant LIB = $*DISTRO.name eq 'macosx' ?? '/System/Library/Frameworks/OpenGL.framework/Libraries/libGL.dylib' !! ('GL');
+constant LIB = do given $*DISTRO.name {
+    when 'macosx' { '/System/Library/Frameworks/OpenGL.framework/Libraries/libGL.dylib' };
+    when 'ubuntu' { ('GL', v1) };
+    default { die "Please add your distro ('$*DISTRO') and the right name/version of GL to $?FILE:$?LINE" };
+}
 
 sub glGenVertexArrays(int32 $n, CArray[uint32] $arrays) is native(LIB) is export { * }
 sub glBindVertexArray(uint32 $array) is native(LIB) is export { * }

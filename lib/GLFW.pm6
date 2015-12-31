@@ -2,7 +2,11 @@ unit module GLFW;
 
 use NativeCall;
 
-constant LIB = ('glfw3', v3);
+constant LIB = do given $*DISTRO.name {
+    when 'macosx' { ('glfw3', v3) };
+    when 'ubuntu' { ('glfw', v3) };
+    default { die "Please add your distro ('$*DISTRO') and the right name/version of glfw to $?FILE:$?LINE" };
+}
 
 class Monitor is repr('CPointer') { }
 class Window is repr('CPointer') { ... }
