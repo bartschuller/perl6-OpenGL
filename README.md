@@ -3,7 +3,9 @@ OpenGL
 
 Bindings to the OpenGL library so you can write graphics programs in perl6.
 
-Only tested on a Mac running Yosemite.
+Status: Proof of concept code, I will not develop it further.
+
+Only tested on a Mac running Yosemite and some Linuxes.
 
 Dependencies: glfw3 (`brew install glfw3` on Mac)
 
